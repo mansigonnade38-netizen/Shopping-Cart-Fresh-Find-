@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FreshFind Store</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
+body{background:#f4f6f9}
+
+/* HEADER */
+header{
+  background:#0f172a;
+  color:white;
+  padding:15px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+.logo{
+  font-size:24px;
+  font-weight:700;
+  letter-spacing:1px;
+}
+.logo span{color:#38bdf8}
+nav a{
+  color:white;
+  text-decoration:none;
+  margin:0 15px;
+  font-weight:500;
+}
+nav a:hover{color:#38bdf8}
+
+/* HERO */
+.hero{
+  height:70vh;
+  background:url('https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=1400&q=80') center/cover;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:white;
+  position:relative;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.5);
+}
+.hero-content{position:relative;z-index:1}
+.hero h1{font-size:48px;margin-bottom:15px}
+.hero p{font-size:18px;margin-bottom:20px}
+.btn{
+  padding:12px 25px;
+  background:#38bdf8;
+  color:white;
+  border:none;
+  border-radius:30px;
+  cursor:pointer;
+  transition:.3s;
+}
+.btn:hover{background:#0ea5e9;transform:scale(1.05)}
+
+/* PRODUCTS */
+.section-title{
+  text-align:center;
+  margin:40px 0 20px;
+  font-size:32px;
+}
+
+.products{
+  padding:20px 40px 60px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:25px;
+}
+
+.product-card{
+  background:white;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 10px 20px rgba(0,0,0,.08);
+  transition:.35s;
+  position:relative;
+  animation:fadeIn .6s ease both;
+}
+
+.product-card:hover{
+  transform:translateY(-8px) scale(1.02);
+  box-shadow:0 15px 30px rgba(0,0,0,.15);
+}
+
+.product-card img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  display:block;
+}
+
+.product-info{padding:15px}
+.product-info h4{margin-bottom:6px}
+.price{color:#0ea5e9;font-weight:600;margin-bottom:10px}
+
+.add-btn{
+  width:100%;
+  padding:10px;
+  border:none;
+  background:#0f172a;
+  color:white;
+  border-radius:10px;
+  cursor:pointer;
+  transition:.3s;
+}
+.add-btn:hover{background:#38bdf8}
+
+/* HOVER BADGE */
+.badge{
+  position:absolute;
+  top:12px;
+  left:12px;
+  background:#22c55e;
+  color:white;
+  padding:5px 10px;
+  border-radius:20px;
+  font-size:12px;
+}
+
+/* FOOTER */
+footer{
+  background:#0f172a;
+  color:#cbd5f1;
+  padding:50px 40px 20px;
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:30px;
+}
+.footer h3{color:white;margin-bottom:15px}
+.footer a{
+  display:block;
+  color:#cbd5f1;
+  text-decoration:none;
+  margin:6px 0;
+}
+.footer a:hover{color:#38bdf8}
+
+.footer-bottom{
+  text-align:center;
+  margin-top:30px;
+  border-top:1px solid #1f2937;
+  padding-top:15px;
+}
+
+/* ANIMATION */
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  .hero h1{font-size:32px}
+  header{padding:15px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">Fresh<span>Find</span></div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#products">Products</a>
+    <a href="#">Deals</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Discover Smart Shopping</h1>
+    <p>FreshFind — Gadgets • Fashion • Sneakers • Smartwatches</p>
+    <button class="btn">Shop Now</button>
+  </div>
+</section>
+
+<h2 class="section-title" id="products">Trending Products</h2>
+
+<section class="products">
+
+<!-- SMARTWATCHES -->
+<div class="product-card"><span class="badge">New</span>
+<img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=500&q=80">
+<div class="product-info"><h4>Pro Smartwatch</h4><div class="price">₹12,999</div><button class="add-btn">Add to Cart</button></div></div>
+
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1551816230-ef5deaed4a26?auto=format&fit=crop&w=500&q=80">
+<div class="product-info"><h4>Fitness Watch</h4><div class="price">₹8,499</div><button class="add-btn">Add to Cart</button></div></div>
+
+<!-- SNEAKERS -->
+<div class="product-card"><span class="badge">Hot</span>
+<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=500&q=80">
+<div class="product-info"><h4>Air Sneakers</h4><div class="price">₹6,999</div><button class="add-btn">Add to Cart</button></div></div>
+
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=500&q=80">
+<div class="product-info"><h4>Street Runners</h4><div class="price">₹5,999</div><button class="add-btn">Add to Cart</button></div></div>
+
+<!-- GADGETS -->
+<div class="product-card">
+<img src="https://tse4.mm.bing.net/th/id/OIP.IeUUvy7k7e_ZKnY5NLxEswHaEO?pid=Api&P=0&h=180">
+<div class="product-info"><h4>Wireless Earbuds</h4><div class="price">₹3,499</div><button class="add-btn">Add to Cart</button></div></div>
+
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1518444065439-e933c06ce9cd?auto=format&fit=crop&w=500&q=80">
+<div class="product-info"><h4>Bluetooth Speaker</h4><div class="price">₹4,299</div><button class="add-btn">Add to Cart</button></div></div>
+
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=500&q=80">
+<div class="product-info"><h4>Smart Camera</h4><div class="price">₹14,999</div><button class="add-btn">Add to Cart</button></div></div>
+
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1580910051074-3eb694886505?auto=format&fit=crop&w=500&q=80">
+<div class="product-info"><h4>Wireless Charger</h4><div class="price">₹1,999</div><button class="add-btn">Add to Cart</button></div></div>
+
+<!-- FASHION -->
+<div class="product-card">
+<img src="https://tse2.mm.bing.net/th/id/OIP.6k5a5QIV6k_O92nGWRufpAHaF8?pid=Api&P=0&h=180">
+<div class="product-info"><h4>Stylish Backpack</h4><div class="price">₹2,799</div><button class="add-btn">Add to Cart</button></div></div>
+
+<div class="product-card">
+<img src="https://tse1.mm.bing.net/th/id/OIP.5I4DMv-kwjoClA42uRzjUwHaEJ?pid=Api&P=0&h=180">
+<div class="product-info"><h4>Fashion Sunglasses</h4><div class="price">₹1,499</div><button class="add-btn">Add to Cart</button></div></div>
+
+</section>
+
+<footer class="footer">
+<div class="footer-grid">
+
+<div>
+<h3>FreshFind</h3>
+<p>Your one‑stop smart shopping destination for gadgets, fashion, and lifestyle products.</p>
+</div>
+
+<div>
+<h3>Shop</h3>
+<a href="#">Smartwatches</a>
+<a href="#">Sneakers</a>
+<a href="#">Gadgets</a>
+<a href="#">Fashion</a>
+</div>
+
+<div>
+<h3>Support</h3>
+<a href="#">Help Center</a>
+<a href="#">Returns</a>
+<a href="#">Shipping</a>
+<a href="#">Track Order</a>
+</div>
+
+<div>
+<h3>Contact</h3>
+<a>Email: support@freshfind.com</a>
+<a>Phone: +91 xxxxxxxxxx</a>
+<a>Address: Mumbai, India</a>
+</div>
+
+</div>
+
+<div class="footer-bottom">© 2026 FreshFind. All rights reserved.</div>
+</footer>
+
+</body>
+</html>
